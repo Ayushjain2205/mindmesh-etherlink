@@ -15,7 +15,7 @@ const smartWalletConfig = {
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThirdwebProvider
-      activeChain="gnosis"
+      activeChain="binance-testnet"
       clientId="aa131b3a51f3247c974b4611ac4ff73e"
       supportedWallets={[smartWallet(embeddedWallet(), smartWalletConfig)]}
     >
