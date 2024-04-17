@@ -9,6 +9,8 @@ const Page = ({
   color = "#fff",
   topBar = true,
 }) => {
+  const router = useRouter();
+
   const childContentClasses = isGridView
     ? "absolute top-0 w-full"
     : "mt-[56px] w-full";
