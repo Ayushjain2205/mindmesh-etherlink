@@ -5,6 +5,7 @@ import { toast } from "react-hot-toast";
 const Generate = () => {
   const [prompt, setPrompt] = useState(""); // State to hold the user's input
   const [images, setImages] = useState([]); // State to hold the generated image URLs
+  const [generated, setGenerated] = useState(false); // State to indicate if images have been generated
   const [isLoading, setIsLoading] = useState(false); // State to indicate loading status
 
   const fetchImageFromDalle = useCallback(async () => {
@@ -30,6 +31,7 @@ const Generate = () => {
       const data = await response.json();
       if (data && data.data && data.data.length > 0) {
         setImages((prevImages) => [data.data[0].url, ...prevImages]);
+        setGenerated(true);
       }
     } catch (error) {
       console.error("Error fetching image:", error);
@@ -42,19 +44,18 @@ const Generate = () => {
   const handleRedo = () => {
     setImages([]); // Clear all generated images
     setPrompt(""); // Clear the prompt
+    setGenerated(false);
   };
 
   return (
     <Page back="/create">
       <div className="relative flex flex-col p-[10px] mt-[20px] mb-[60px]">
-        <p className="text-primary text-[20px]">REAL TIME VISUALS</p>
-        <p className="text-primary text-[12px] leading-[20px] mt-[12px]">
+        <p className="text-[#000] text-[20px]">REAL TIME VISUALS</p>
+        <p className="text-black text-[12px] leading-[20px] mt-[12px]">
           Users comment a word, and this model generates that image in real
           time.
         </p>
-        <p className="text-black text-[12px] mt-[26px]">
-          Keyword (output you expect?)
-        </p>
+
         <div className="flex-none mt-[8px]">
           <div className="flex flex-row items-center pr-[12px] rounded-[6px] border-[0.5px] border-[#909090] bg-transparent w-full h-[40px]">
             <input
@@ -64,50 +65,67 @@ const Generate = () => {
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
             />
-            <button
-              onClick={fetchImageFromDalle} // Use a button for accessibility
-              disabled={isLoading} // Disable while loading
-              className="flex items-center justify-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="25"
-                height="25"
-                viewBox="0 0 25 25"
-                fill="none"
+            {!generated ? (
+              <button
+                onClick={fetchImageFromDalle} // Use a button for accessibility
+                disabled={isLoading} // Disable while loading
+                className="flex items-center justify-center"
               >
-                <path
-                  d="M0.417969 3.84033C0.417969 3.04468 0.734039 2.28162 1.29665 1.71901C1.85926 1.1564 2.62232 0.840332 3.41797 0.840332L21.418 0.840332C22.2136 0.840332 22.9767 1.1564 23.5393 1.71901C24.1019 2.28162 24.418 3.04468 24.418 3.84033V21.8403C24.418 22.636 24.1019 23.399 23.5393 23.9617C22.9767 24.5243 22.2136 24.8403 21.418 24.8403H3.41797C2.62232 24.8403 1.85926 24.5243 1.29665 23.9617C0.734039 23.399 0.417969 22.636 0.417969 21.8403V3.84033ZM8.66797 18.8403C8.66793 18.9849 8.70968 19.1264 8.78818 19.2478C8.86669 19.3692 8.97861 19.4653 9.11047 19.5246C9.24233 19.5839 9.38851 19.6038 9.53142 19.5819C9.67433 19.56 9.80787 19.4973 9.91597 19.4013L16.666 13.4013C16.7453 13.331 16.8088 13.2446 16.8522 13.1479C16.8957 13.0512 16.9182 12.9464 16.9182 12.8403C16.9182 12.7343 16.8957 12.6295 16.8522 12.5328C16.8088 12.4361 16.7453 12.3497 16.666 12.2793L9.91597 6.27933C9.80787 6.18334 9.67433 6.12063 9.53142 6.09876C9.38851 6.07689 9.24233 6.09679 9.11047 6.15607C8.97861 6.21534 8.86669 6.31146 8.78818 6.43286C8.70968 6.55426 8.66793 6.69576 8.66797 6.84033V18.8403Z"
-                  fill="#909090"
-                />
-              </svg>
-            </button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="25"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.401 3.42835C7.47067 3.3585 7.55344 3.30309 7.64455 3.26528C7.73567 3.22747 7.83335 3.20801 7.932 3.20801C8.03066 3.20801 8.12834 3.22747 8.21946 3.26528C8.31057 3.30309 8.39334 3.3585 8.463 3.42835L17.463 12.4283C17.5328 12.498 17.5883 12.5808 17.6261 12.6719C17.6639 12.763 17.6833 12.8607 17.6833 12.9593C17.6833 13.058 17.6639 13.1557 17.6261 13.2468C17.5883 13.3379 17.5328 13.4207 17.463 13.4903L8.463 22.4903C8.32217 22.6312 8.13117 22.7103 7.932 22.7103C7.73284 22.7103 7.54183 22.6312 7.401 22.4903C7.26017 22.3495 7.18106 22.1585 7.18106 21.9593C7.18106 21.7602 7.26017 21.5692 7.401 21.4283L15.8715 12.9593L7.401 4.49035C7.33116 4.42068 7.27574 4.33792 7.23794 4.2468C7.20013 4.15568 7.18066 4.058 7.18066 3.95935C7.18066 3.8607 7.20013 3.76302 7.23794 3.6719C7.27574 3.58078 7.33116 3.49802 7.401 3.42835Z"
+                    fill="black"
+                  />
+                </svg>
+              </button>
+            ) : (
+              <button className="flex items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.9996 4.5C13.6206 4.50062 15.1977 5.02639 16.4948 5.99856C17.7919 6.97072 18.7391 8.33696 19.1945 9.89262C19.65 11.4483 19.5892 13.1096 19.0213 14.6278C18.4533 16.1461 17.4088 17.4394 16.0441 18.3142C14.6794 19.1889 13.0681 19.598 11.4514 19.4801C9.83472 19.3623 8.29973 18.7238 7.07635 17.6604C5.85297 16.597 5.00705 15.1658 4.66529 13.5813C4.32353 11.9968 4.50432 10.3442 5.18058 8.871C5.25419 8.69189 5.25567 8.49126 5.18471 8.31108C5.11376 8.13091 4.97586 7.98516 4.79989 7.90435C4.62392 7.82353 4.42351 7.81391 4.2406 7.8775C4.0577 7.94109 3.90647 8.07295 3.81858 8.2455C3.0071 10.0134 2.79024 11.9966 3.20048 13.8981C3.61072 15.7996 4.62599 17.5169 6.0942 18.793C7.56241 20.069 9.40453 20.835 11.3446 20.9762C13.2847 21.1175 15.2183 20.6263 16.8559 19.5764C18.4934 18.5264 19.7467 16.9742 20.428 15.1522C21.1093 13.3301 21.1819 11.3364 20.635 9.46967C20.0881 7.6029 18.9511 5.96357 17.3944 4.79723C15.8376 3.63089 13.9448 3.00033 11.9996 3V4.5Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M11.9998 6.69864V0.800641C11.9998 0.729386 11.9794 0.659613 11.9412 0.599493C11.9029 0.539372 11.8484 0.491394 11.7838 0.461175C11.7193 0.430956 11.6475 0.419747 11.5768 0.428862C11.5062 0.437977 11.4395 0.467037 11.3848 0.512641L7.84479 3.46164C7.80259 3.49683 7.76864 3.54087 7.74534 3.59064C7.72204 3.64041 7.70996 3.69469 7.70996 3.74964C7.70996 3.80459 7.72204 3.85887 7.74534 3.90864C7.76864 3.95841 7.80259 4.00245 7.84479 4.03764L11.3848 6.98664C11.4395 7.03224 11.5062 7.06131 11.5768 7.07042C11.6475 7.07953 11.7193 7.06833 11.7838 7.03811C11.8484 7.00789 11.9029 6.95991 11.9412 6.89979C11.9794 6.83967 11.9998 6.7699 11.9998 6.69864Z"
+                    fill="black"
+                  />
+                </svg>
+              </button>
+            )}
           </div>
         </div>
-        <p className="text-[10px] text-black opacity-80 mt-[6px]">
-          Suggestion: sci-fi visuals
-        </p>
-        <p className="text-black text-[12px] leading-[20px] mt-[12px]">
-          Your audience will generate images and it will keep appearing on the
-          post in real time.
-        </p>
+
         {isLoading && <p className="mt-4 text-center">Generating...</p>}
         {images.map((image, index) => (
           <div key={index} className="mt-[20px]">
-            <img src={image} alt="Generated" className="max-w-full max-h-96" />
+            <img
+              src={image}
+              alt="Generated"
+              className="max-w-full max-h-96 rounded-[8px]"
+            />
           </div>
         ))}
 
         <div className="fixed bg-white bottom-0 flex w-full justify-between p-[10px]">
           <button
-            onClick={handleRedo}
-            className="bg text-primary h-[40px] w-[35px] "
-          >
-            Redo
-          </button>
-          <button
-            className="bg-[#262626] text-white h-[40px] w-[133px] rounded-[8px] mr-[10px]"
-            onClick={fetchImageFromDalle}
+            className="bg-primary text-black font-[500] h-[45px] w-full rounded-[8px] mr-[10px]"
+            // onClick={fetchImageFromDalle}
           >
             Post
           </button>
