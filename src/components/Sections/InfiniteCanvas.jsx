@@ -43,7 +43,7 @@ const InfiniteCanvas = ({ remixid = null }) => {
         <div className="grid grid-cols-6 gap-x-[180px] gap-y-[30px]">
           {randomizedThumbnails.map((post, index) => (
             <Link href={`/post/${post.id}`} key={index}>
-              <div className="block h-[150px] w-[150px] rounded-[8px] overflow-hidden">
+              <div className="block h-[150px] w-[150px] rounded-[4px] overflow-hidden">
                 <img
                   src={post.thumbnail}
                   alt={`Content ${post.title}`}
