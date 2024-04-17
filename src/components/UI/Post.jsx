@@ -165,7 +165,7 @@ const Post = ({
 
           <div className="relative">
             {showEmojiPanel && (
-              <div className="absolute -top-[5px] left-[90px] transform -translate-x-1/2 -translate-y-full">
+              <div className="absolute -top-[5px] left-[90px] transform -translate-x-1/2 -translate-y-full z-40">
                 <div className="relative">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
