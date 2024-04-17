@@ -75,10 +75,16 @@ const Post = ({
 
   // Function to toggle the comment section visibility
   const toggleComments = () => {
+    if (showRemixed) {
+      setShowRemixed(false);
+    }
     setShowComments(!showComments);
   };
 
   const toggleRemixed = () => {
+    if (showComments) {
+      setShowComments(false);
+    }
     setShowRemixed(!showRemixed);
   };
 
