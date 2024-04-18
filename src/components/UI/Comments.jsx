@@ -4,13 +4,13 @@ import toast from "react-hot-toast";
 const initialComments = [
   {
     id: 1,
-    username: "user1",
+    username: "yushiyushi",
     comment: "This is awesome!",
     avatar: "/images/avatar.png",
   },
   {
     id: 2,
-    username: "user2",
+    username: "ishikapareek",
     comment: "Really cool post!",
     avatar: "/images/avatar.png",
   },
