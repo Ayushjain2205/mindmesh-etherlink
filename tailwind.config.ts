@@ -12,6 +12,7 @@ const config: Config = {
       colors: {
         primary: "#CAE0FF",
         black: "#262626",
+        secondary: "#1A0C6D",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
