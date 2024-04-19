@@ -7,6 +7,7 @@ const ImageWithOptionalSVG = ({ src, shouldRenderSVG }) => (
       className="w-[104px] h-[86px] rounded-[4px] flex-shrink-0"
       src={src}
       alt=""
+      loading="lazy"
     />
     {shouldRenderSVG && (
       <svg
