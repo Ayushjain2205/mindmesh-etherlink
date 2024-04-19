@@ -123,20 +123,21 @@ const Post = ({
   ]);
 
   return (
-    <div className="flex flex-col mt-[8px] pt-[12px] relative">
-      <div className="absolute h-[246px] w-[390px] -mt-[12px] bg-primary z-0"></div>
-      <div className="flex flex-row gap-[8px] items-center w-full px-[16px] z-10">
-        <img className="h-[24px] w-[24px] rounded-full" src={avatar} alt="" />
-        <span className="text-[12px] font-medium"> {username}</span>
+    <div className="flex flex-col mt-[8px]  relative">
+      <div className="flex flex-col py-[12px] bg-primary">
+        <div className="flex flex-row gap-[8px] items-center w-full px-[16px] z-10">
+          <img className="h-[24px] w-[24px] rounded-full" src={avatar} alt="" />
+          <span className="text-[12px] font-medium"> {username}</span>
+        </div>
+        <p className="mx-[10px] mt-[7px] text-[14px] z-10">
+          {title}/ <span className="text-[#FF5705] font-[700]">{tag}</span>
+        </p>
+        {type == "dynamic" && (
+          <span className="mx-[10px] mt-[3px] text-[#969695] text-[12px] z-10">
+            comment to view your visual on the post
+          </span>
+        )}
       </div>
-      <p className="mx-[10px] mt-[7px] text-[14px] z-10">
-        {title}/ <span className="text-[#FF5705] font-[700]">{tag}</span>
-      </p>
-      {type == "dynamic" && (
-        <span className="mx-[10px] mt-[3px] text-[#969695] text-[12px] z-10">
-          comment to view your visual on the post
-        </span>
-      )}
 
       <div className="flex flex-col justify-center items-center mx-[10px] mt-[12px] w-[370px] h-[358px] rounded-[8px] z-10">
         {type === "audio" && <AudioPost audioUrl={src} />}
