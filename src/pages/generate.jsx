@@ -30,7 +30,7 @@ const Generate = () => {
 
       const data = await response.json();
       if (data && data.data && data.data.length > 0) {
-        setImages((prevImages) => [data.data[0].url, ...prevImages]);
+        setImages((prevImages) => [data.data[0].url]);
         setGenerated(true);
       }
     } catch (error) {
@@ -50,13 +50,31 @@ const Generate = () => {
   return (
     <Page back="/create">
       <div className="relative flex flex-col p-[10px] mt-[20px] mb-[60px]">
-        <p className="text-[#000] text-[20px]">REAL TIME VISUALS</p>
-        <p className="text-black text-[12px] leading-[20px] mt-[12px]">
+        <p className="text-secondary font-[500] text-[20px]">
+          REAL TIME VISUALS
+        </p>
+        <p className="text-secondary text-[12px] leading-[20px] mt-[12px]">
           Users comment a word, and this model generates that image in real
           time.
         </p>
 
-        <div className="flex-none mt-[8px]">
+        <div className="flex flex-col justify-center mt-[12px] w-[370px] h-[335px] border-[1px] rounded-[8px]">
+          {images.length > 0 ? (
+            <div className="">
+              <img
+                src={images[0]}
+                alt="Generated"
+                className="w-[370px] h-[335px] rounded-[8px]"
+              />
+            </div>
+          ) : (
+            <p className="text-center text-[#616161] text-[12px]">
+              {isLoading ? "Generating..." : "Your creation appears here"}
+            </p>
+          )}
+        </div>
+
+        <div className="flex-none mt-[30px]">
           <div className="flex flex-row items-center pr-[12px] rounded-[6px] border-[0.5px] border-[#909090] bg-transparent w-full h-[40px]">
             <input
               className="bg-transparent w-full p-[18px] focus:outline-none text-[12px]"
@@ -87,7 +105,10 @@ const Generate = () => {
                 </svg>
               </button>
             ) : (
-              <button className="flex items-center justify-center">
+              <button
+                className="flex items-center justify-center"
+                onClick={handleRedo}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -111,20 +132,9 @@ const Generate = () => {
           </div>
         </div>
 
-        {isLoading && <p className="mt-4 text-center">Generating...</p>}
-        {images.map((image, index) => (
-          <div key={index} className="mt-[20px]">
-            <img
-              src={image}
-              alt="Generated"
-              className="max-w-full max-h-96 rounded-[8px]"
-            />
-          </div>
-        ))}
-
         <div className="fixed bg-white bottom-0 flex w-full justify-between p-[10px]">
           <button
-            className="bg-primary text-black font-[500] h-[45px] w-full rounded-[8px] mr-[10px]"
+            className="bg-primary text-black font-[500] h-[45px] w-full rounded-[8px] mr-[10px] -ml-[10px]"
             // onClick={fetchImageFromDalle}
           >
             Post
