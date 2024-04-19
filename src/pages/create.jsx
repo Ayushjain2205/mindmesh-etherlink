@@ -16,7 +16,7 @@ const create = () => {
   }, []);
 
   return (
-    <Page back="/" color="#262626">
+    <Page back="/" color="#CAE0FF">
       <div
         ref={scrollContainerRef}
         className="flex hide-scrollbar gap-[20px] overflow-x-scroll mt-[50px] "
