@@ -267,7 +267,10 @@ const remix = () => {
               </svg>
             </button>
           ) : (
-            <button className="flex items-center justify-center">
+            <button
+              className="flex items-center justify-center"
+              onClick={handleRedo}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
