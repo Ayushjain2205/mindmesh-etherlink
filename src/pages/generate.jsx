@@ -58,7 +58,7 @@ const Generate = () => {
           time.
         </p>
 
-        <div className="flex flex-col justify-center mt-[12px] w-[370px] h-[335px] border-[1px] rounded-[8px]">
+        <div className="flex flex-col justify-center mt-[12px] w-[370px] h-[335px] border-[1px] border-[#4F5170] rounded-[8px]">
           {images.length > 0 ? (
             <div className="">
               <img
@@ -68,14 +68,14 @@ const Generate = () => {
               />
             </div>
           ) : (
-            <p className="text-center text-[#616161] text-[12px]">
+            <p className="text-center  text-[#4F5170] text-[14px]">
               {isLoading ? "Generating..." : "Your creation appears here"}
             </p>
           )}
         </div>
 
         <div className="flex-none mt-[30px]">
-          <div className="flex flex-row items-center pr-[12px] rounded-[6px] border-[0.5px] border-[#909090] bg-transparent w-full h-[40px]">
+          <div className="flex flex-row items-center pr-[12px] rounded-[6px] border border-[#4F5170]  bg-transparent w-full h-[40px]">
             <input
               className="bg-transparent w-full p-[18px] focus:outline-none text-[12px]"
               type="text"
