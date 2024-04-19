@@ -65,7 +65,7 @@ const remix = () => {
   }
 
   return (
-    <div className="flex flex-col mt-[16px]">
+    <div className="flex flex-col">
       <div className="flex flex-row w-full justify-between absolute top-0 z-50">
         <div className="flex flex-col items-center justify-center w-[40px] h-[40px] cursor-pointer">
           <Link href={`/post/${id}`}>
@@ -158,60 +158,66 @@ const remix = () => {
         </div>
       </div>
 
-      <div className="flex flex-row items-center mt-[60px]">
-        <div className="flex flex-row gap-[5px] items-center h-[35px]  border-black px-[16px]">
-          <img className="w-[20px] h-[20px]" src="/images/avatar.png" alt="" />
-          <span className="text-[12px] font-medium">ishikapareek</span>
-        </div>
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="17"
-          viewBox="0 0 16 17"
-          fill="none"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M0 4.1394C0 4.0068 0.0526784 3.87962 0.146447 3.78585C0.240215 3.69208 0.367392 3.6394 0.5 3.6394H1C3.202 3.6394 4.827 4.8794 5.874 6.0574C6.364 6.6094 6.739 7.1594 7 7.5894C7.26 7.1594 7.636 6.6094 8.126 6.0574C9.173 4.8794 10.798 3.6394 13 3.6394V4.6394C11.202 4.6394 9.827 5.6494 8.874 6.7214C8.3587 7.30507 7.91613 7.94911 7.556 8.6394C7.91582 9.32965 8.35805 9.97368 8.873 10.5574C9.828 11.6294 11.204 12.6394 13 12.6394V13.6394C10.798 13.6394 9.173 12.3994 8.126 11.2214C7.70551 10.7455 7.32866 10.2328 7 9.6894C6.74 10.1194 6.364 10.6694 5.874 11.2214C4.827 12.3994 3.202 13.6394 1 13.6394H0.5C0.367392 13.6394 0.240215 13.5867 0.146447 13.493C0.0526784 13.3992 0 13.272 0 13.1394C0 13.0068 0.0526784 12.8796 0.146447 12.7859C0.240215 12.6921 0.367392 12.6394 0.5 12.6394H1C2.798 12.6394 4.173 11.6294 5.126 10.5574C5.6413 9.97374 6.08387 9.3297 6.444 8.6394C6.08418 7.94916 5.64195 7.30512 5.127 6.7214C4.172 5.6494 2.796 4.6394 1 4.6394H0.5C0.367392 4.6394 0.240215 4.58673 0.146447 4.49296C0.0526784 4.39919 0 4.27201 0 4.1394Z"
-            fill="black"
-          />
-          <path
-            d="M13 6.10537V2.17337C13 2.12586 13.0136 2.07935 13.0391 2.03927C13.0646 1.99919 13.101 1.9672 13.144 1.94706C13.187 1.92691 13.2349 1.91944 13.282 1.92552C13.3291 1.93159 13.3735 1.95097 13.41 1.98137L15.77 3.94737C15.89 4.04737 15.89 4.23137 15.77 4.33137L13.41 6.29737C13.3735 6.32777 13.3291 6.34714 13.282 6.35322C13.2349 6.3593 13.187 6.35183 13.144 6.33168C13.101 6.31153 13.0646 6.27955 13.0391 6.23947C13.0136 6.19939 13 6.15287 13 6.10537ZM13 15.1054V11.1734C13 11.1259 13.0136 11.0793 13.0391 11.0393C13.0646 10.9992 13.101 10.9672 13.144 10.9471C13.187 10.9269 13.2349 10.9194 13.282 10.9255C13.3291 10.9316 13.3735 10.951 13.41 10.9814L15.77 12.9474C15.89 13.0474 15.89 13.2314 15.77 13.3314L13.41 15.2974C13.3735 15.3278 13.3291 15.3471 13.282 15.3532C13.2349 15.3593 13.187 15.3518 13.144 15.3317C13.101 15.3115 13.0646 15.2795 13.0391 15.2395C13.0136 15.1994 13 15.1529 13 15.1054Z"
-            fill="black"
-          />
-        </svg>
-
-        <div className="flex flex-row gap-[8px] items-center h-[35px]  border-black px-[16px]">
-          <img
-            className="w-[20px] h-[20px] rounded-full"
-            src={postToDisplay.avatar}
-            alt=""
-          />
-          <span className="text-[12px] font-medium">
-            {postToDisplay.username}
-          </span>
-        </div>
-      </div>
-
-      <div className="flex flex-row gap-2 ml-4 mt-[8px]">
-        <img
-          className="border border-black rounded-[2px] rounded-4 w-[40px] h-[40px]"
-          src={postToDisplay.thumbnail}
-        />
-        <div>
-          <div className="text-[14px] w-[297px]">
-            {postToDisplay.title}/{" "}
-            <span className="text-[14px] text-primary font-[700]">
-              {postToDisplay.tag}
-            </span>
+      <div className="flex flex-col mt-[50px] bg-primary pb-[10px]">
+        <div className="flex flex-row items-center">
+          <div className="flex flex-row gap-[5px] items-center h-[35px]  border-black px-[16px]">
+            <img
+              className="w-[20px] h-[20px]"
+              src="/images/avatar.png"
+              alt=""
+            />
+            <span className="text-[12px] font-medium">ishikapareek</span>
           </div>
 
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="17"
+            viewBox="0 0 16 17"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 4.1394C0 4.0068 0.0526784 3.87962 0.146447 3.78585C0.240215 3.69208 0.367392 3.6394 0.5 3.6394H1C3.202 3.6394 4.827 4.8794 5.874 6.0574C6.364 6.6094 6.739 7.1594 7 7.5894C7.26 7.1594 7.636 6.6094 8.126 6.0574C9.173 4.8794 10.798 3.6394 13 3.6394V4.6394C11.202 4.6394 9.827 5.6494 8.874 6.7214C8.3587 7.30507 7.91613 7.94911 7.556 8.6394C7.91582 9.32965 8.35805 9.97368 8.873 10.5574C9.828 11.6294 11.204 12.6394 13 12.6394V13.6394C10.798 13.6394 9.173 12.3994 8.126 11.2214C7.70551 10.7455 7.32866 10.2328 7 9.6894C6.74 10.1194 6.364 10.6694 5.874 11.2214C4.827 12.3994 3.202 13.6394 1 13.6394H0.5C0.367392 13.6394 0.240215 13.5867 0.146447 13.493C0.0526784 13.3992 0 13.272 0 13.1394C0 13.0068 0.0526784 12.8796 0.146447 12.7859C0.240215 12.6921 0.367392 12.6394 0.5 12.6394H1C2.798 12.6394 4.173 11.6294 5.126 10.5574C5.6413 9.97374 6.08387 9.3297 6.444 8.6394C6.08418 7.94916 5.64195 7.30512 5.127 6.7214C4.172 5.6494 2.796 4.6394 1 4.6394H0.5C0.367392 4.6394 0.240215 4.58673 0.146447 4.49296C0.0526784 4.39919 0 4.27201 0 4.1394Z"
+              fill="black"
+            />
+            <path
+              d="M13 6.10537V2.17337C13 2.12586 13.0136 2.07935 13.0391 2.03927C13.0646 1.99919 13.101 1.9672 13.144 1.94706C13.187 1.92691 13.2349 1.91944 13.282 1.92552C13.3291 1.93159 13.3735 1.95097 13.41 1.98137L15.77 3.94737C15.89 4.04737 15.89 4.23137 15.77 4.33137L13.41 6.29737C13.3735 6.32777 13.3291 6.34714 13.282 6.35322C13.2349 6.3593 13.187 6.35183 13.144 6.33168C13.101 6.31153 13.0646 6.27955 13.0391 6.23947C13.0136 6.19939 13 6.15287 13 6.10537ZM13 15.1054V11.1734C13 11.1259 13.0136 11.0793 13.0391 11.0393C13.0646 10.9992 13.101 10.9672 13.144 10.9471C13.187 10.9269 13.2349 10.9194 13.282 10.9255C13.3291 10.9316 13.3735 10.951 13.41 10.9814L15.77 12.9474C15.89 13.0474 15.89 13.2314 15.77 13.3314L13.41 15.2974C13.3735 15.3278 13.3291 15.3471 13.282 15.3532C13.2349 15.3593 13.187 15.3518 13.144 15.3317C13.101 15.3115 13.0646 15.2795 13.0391 15.2395C13.0136 15.1994 13 15.1529 13 15.1054Z"
+              fill="black"
+            />
+          </svg>
+
+          <div className="flex flex-row gap-[8px] items-center h-[35px]  border-black px-[16px]">
+            <img
+              className="w-[20px] h-[20px] rounded-full"
+              src={postToDisplay.avatar}
+              alt=""
+            />
+            <span className="text-[12px] font-medium">
+              {postToDisplay.username}
+            </span>
+          </div>
+        </div>
+
+        <div className="flex flex-row gap-2 ml-4 mt-[8px]">
+          <img
+            className="border border-black rounded-[2px] rounded-4 w-[40px] h-[40px]"
+            src={postToDisplay.thumbnail}
+          />
           <div>
-            <p className="text-[12px] text-[#262626] opacity-70 mt-[4px] ">
-              comment to view your visual on the post
-            </p>
+            <div className="text-[14px] w-[297px]">
+              {postToDisplay.title}/{" "}
+              <span className="text-[14px] text-secondary font-[700]">
+                {postToDisplay.tag}
+              </span>
+            </div>
+
+            <div>
+              <p className="text-[12px] text-[#262626] opacity-70 mt-[4px] ">
+                comment to view your visual on the post
+              </p>
+            </div>
           </div>
         </div>
       </div>
