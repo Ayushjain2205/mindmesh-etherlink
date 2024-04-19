@@ -7,7 +7,7 @@ const WelcomeScreen = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (screenIndex < 4) {
+    if (screenIndex < 3) {
       // Only set a timer if we're not on the last screen
       const timer = setTimeout(() => {
         setScreenIndex(screenIndex + 1);
@@ -18,7 +18,7 @@ const WelcomeScreen = () => {
   }, [screenIndex]);
 
   const handleClick = () => {
-    if (screenIndex < 4) {
+    if (screenIndex < 3) {
       setScreenIndex(screenIndex + 1);
     } else {
       router.push("/wallet"); // On the last screen, redirect to login
@@ -32,10 +32,8 @@ const WelcomeScreen = () => {
       case 1:
         return <Welcome2 />;
       case 2:
-        return <Welcome3 />;
-      case 3:
         return <Welcome4 />;
-      case 4:
+      case 3:
         return <Welcome5 />;
       default:
         return <p>Invalid screen index</p>;
@@ -46,7 +44,7 @@ const WelcomeScreen = () => {
 };
 
 const Welcome1 = () => (
-  <div className=" flex flex-col justify-center items-center bg-[#FF5705] h-[665px] w-[390px]">
+  <div className=" flex flex-col justify-center items-center bg-primary h-[665px] w-[390px]">
     <img
       className="mt-[180px]  w-[150px] h-[150px] blinking-element scaledown"
       src="/images/mascot1.svg"
@@ -61,11 +59,11 @@ const Welcome1 = () => (
 
 const Welcome2 = () => (
   <div className="bg-white h-[650px] w-[390px] ">
-    <p className="text-[#FF5705] text-[80px] leading-[100px] w-[300px] h-[340px] font-extrabold ml-5 mr-5 shiver">
+    <p className="text-[#FFC022] text-[80px] leading-[100px] w-[300px] h-[340px] font-extrabold ml-5 mr-5 shiver">
       CREATE + consume
     </p>
     <div>
-      <p className="text-[#FF5705] text-[20px] leading-[30px] mb-5 mr-5 ml-5 mt-[280px] font-bold">
+      <p className="text-[#FFC022] text-[20px] leading-[30px] mb-5 mr-5 ml-5 mt-[280px] font-bold">
         (everything creative)
       </p>
     </div>
@@ -86,8 +84,8 @@ const Welcome3 = () => (
 );
 
 const Welcome4 = () => (
-  <div className="bg-[#FF5705] h-[665px]">
-    <p className="mr-[10px] text-[52px] text-black font-extrabold text-right">
+  <div className="bg-primary h-[665px]">
+    <p className="mr-[10px] text-[52px] text-[#1A0C6D] font-extrabold text-right">
       customise templates
     </p>
 
@@ -141,11 +139,11 @@ const Welcome5 = () => (
       <div>
         <img
           className="w-[90px] h-[90px] left-[100px] top-[200px] right-[50px] shiver"
-          src="/images/ourmascot.svg"
+          src="/images/mascot1.svg"
           alt="Mascot"
         />
       </div>
-      <p className="text-[#FF5705] w-[220px] h-[230px] text-[40px] leading-10 text-center font-extrabold ">
+      <p className="text-primary w-[220px] h-[230px] text-[40px] leading-10 text-center font-extrabold ">
         new way to interact with your audience
       </p>
     </div>
@@ -156,7 +154,7 @@ const Welcome5 = () => (
       </button>
     </Link>
 
-    <div className="w-[390px] h-[45px] bg-[#FF5705] mt-[60px] overflow-hidden relative">
+    <div className="w-[390px] h-[45px] bg-[#FFC022] mt-[60px] overflow-hidden relative">
       <p className="absolute whitespace-nowrap text-[14px] text-white leading-[45px] scrolling-text">
         generate your own version. remix posts. a pool of creativity.generate
         your own version. remix posts. a pool of creativity.
