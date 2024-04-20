@@ -310,6 +310,7 @@ const Post = ({
                 <p className="text-[16px] font-[600]">Send a gift</p>
               </div>
               <svg
+                onClick={toggleOverlay}
                 xmlns="http://www.w3.org/2000/svg"
                 width="17"
                 height="17"
@@ -335,7 +336,7 @@ const Post = ({
             <div className="flex w-full justify-end mt-[29px]">
               <button
                 onClick={toggleOverlay}
-                className="bg-[#262626] text-white h-[40px] w-[133px] rounded-[8px]"
+                className="bg-primary text-black h-[40px] w-[133px] rounded-[8px]"
               >
                 Send
               </button>
