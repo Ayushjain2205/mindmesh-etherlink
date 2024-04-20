@@ -51,7 +51,7 @@ const Welcome1 = () => (
     />
     <div>
       <p className="text-[60px] mt-[40px] text-center font-extrabold text-#000000 ">
-        mindmesh
+        MIND MESH
       </p>
     </div>
   </div>
