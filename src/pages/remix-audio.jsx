@@ -199,7 +199,7 @@ const remix = () => {
           </div>
         </div>
 
-        <div className="flex flex-row gap-2 ml-4 mt-[8px]">
+        <div className="flex flex-row items-center gap-2 ml-4 mt-[8px]">
           <img
             className="border border-black rounded-[2px] rounded-4 w-[40px] h-[40px]"
             src={postToDisplay.thumbnail}
@@ -211,30 +211,24 @@ const remix = () => {
                 {postToDisplay.tag}
               </span>
             </div>
-
-            <div>
-              <p className="text-[12px] text-[#262626] opacity-70 mt-[4px] ">
-                comment to view your visual on the post
-              </p>
-            </div>
           </div>
         </div>
       </div>
 
       {/* generated post */}
-      <div className="flex flex-col justify-center mx-[10px] mt-[12px] w-[370px] h-[358px] border-[1px] rounded-[8px]">
+      <div className="flex flex-col justify-center mx-[10px] mt-[12px] w-[370px] h-[358px] border border-[#4F5170] rounded-[8px]">
         {musicUrl ? (
           <AudioPost audioUrl={musicUrl} />
         ) : (
-          <p className="text-center text-[#616161] text-[12px]">
+          <p className="text-center text-[#4F5170] text-[14px]">
             {isLoading ? "Generating" : " Your creation appears here"}
           </p>
         )}
       </div>
 
       {/* textbox */}
-      <div className="flex-none mt-[8px] mx-[10px]">
-        <div className="flex flex-row items-center pr-[12px] rounded-[6px] border-[0.5px] border-[#909090] bg-transparent w-full h-[40px]">
+      <div className="flex-none mt-[30px] mx-[10px]">
+        <div className="flex flex-row items-center pr-[12px]  border border-[#4F5170] rounded-[8px] bg-transparent w-full h-[40px]">
           <input
             className="bg-transparent w-full p-[18px] focus:outline-none text-[12px]"
             type="text"
@@ -290,7 +284,7 @@ const remix = () => {
 
       <div className="fixed bg-white bottom-0 flex w-full justify-between p-[10px]">
         <button
-          className="bg-primary text-black font-[500] h-[45px] w-full rounded-[8px] mr-[10px]"
+          className="bg-primary text-black font-[500] h-[45px] w-full rounded-[8px]"
           // onClick={fetchImageFromDalle}
         >
           Post
