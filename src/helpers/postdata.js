@@ -371,4 +371,52 @@ export const postData = [
     thumbnail:
       "https://res.cloudinary.com/dwwcarx9g/image/upload/v1708285176/feed/explore/d77krrethkx11tl2vynj.png",
   },
+  {
+    id: 31,
+    title: "create memes",
+    tag: "ai-generated-memes",
+    remixid: "ai-generated-memes",
+    type: "dynamic",
+    username: "issuepissue",
+    avatar: "https://picsum.photos/id/110/200",
+    src: "https://res.cloudinary.com/dwwcarx9g/image/upload/v1713647579/feed/explore/Rectangle_2170_vulk6o.png",
+    thumbnail:
+      "https://res.cloudinary.com/dwwcarx9g/image/upload/v1713647579/feed/explore/Rectangle_2170_vulk6o.png",
+  },
+  {
+    id: 32,
+    title: "create memes",
+    tag: "ai-generated-memes",
+    remixid: "ai-generated-memes",
+    type: "dynamic",
+    username: "issuepissue",
+    avatar: "https://picsum.photos/id/110/200",
+    src: "https://res.cloudinary.com/dwwcarx9g/image/upload/v1713645520/feed/explore/AI-Memer_-very-angry-troll_1_1_nfwkjm.jpg",
+    thumbnail:
+      "https://res.cloudinary.com/dwwcarx9g/image/upload/v1713645520/feed/explore/AI-Memer_-very-angry-troll_1_1_nfwkjm.jpg",
+  },
+  {
+    id: 33,
+    title: "create memes",
+    tag: "ai-generated-memes",
+    remixid: "ai-generated-memes",
+    type: "dynamic",
+    username: "issuepissue",
+    avatar: "https://picsum.photos/id/110/200",
+    src: "https://res.cloudinary.com/dwwcarx9g/image/upload/v1713645519/feed/explore/5ea99cf10fc639041e11cbe0_cjlr2b.webp",
+    thumbnail:
+      "https://res.cloudinary.com/dwwcarx9g/image/upload/v1713645519/feed/explore/5ea99cf10fc639041e11cbe0_cjlr2b.webp",
+  },
+  {
+    id: 34,
+    title: "create memes",
+    tag: "ai-generated-memes",
+    remixid: "ai-generated-memes",
+    type: "dynamic",
+    username: "issuepissue",
+    avatar: "https://picsum.photos/id/110/200",
+    src: "https://res.cloudinary.com/dwwcarx9g/image/upload/v1713645464/feed/explore/a-meme-generated-by-ai-about-memes-generated-by-ai-text-v0-0l5za4ktpim91_qwjoiu.webp",
+    thumbnail:
+      "https://res.cloudinary.com/dwwcarx9g/image/upload/v1713645464/feed/explore/a-meme-generated-by-ai-about-memes-generated-by-ai-text-v0-0l5za4ktpim91_qwjoiu.webp",
+  },
 ];

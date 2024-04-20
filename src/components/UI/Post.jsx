@@ -164,7 +164,7 @@ const Post = ({
 
       <div className="flex flex-col justify-center items-center mx-[10px] mt-[12px] w-[370px] h-[358px] rounded-[8px] z-10">
         {type === "audio" && <AudioPost audioUrl={src} />}
-        {type === "dynamic" && <DynamicImage />}
+        {type === "dynamic" && <DynamicImage remixId={remixid} />}
         {type === "scribble" && <Scribble src={src} />}
       </div>
 

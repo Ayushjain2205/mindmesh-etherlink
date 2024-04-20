@@ -1,28 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { postData } from "../../helpers/postdata";
 
-// Filter postData for entries with remixid="weird-food" and map to their src attributes
-const weirdFoodImages = postData
-  .filter((post) => post.remixid === "weird-food")
-  .map((post) => post.src);
+const DynamicImage = ({ remixId }) => {
+  // Use the remixId prop to filter the postData
+  const images = postData
+    .filter((post) => post.remixid === remixId)
+    .map((post) => post.src);
 
-const DynamicImage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % weirdFoodImages.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 3000); // Change the image every 3 seconds
 
     return () => clearInterval(intervalId); // Clear the interval on component unmount
-  }, []);
+  }, [images.length]);
+
+  if (images.length === 0) {
+    return <p>No images available for this category.</p>;
+  }
 
   return (
     <div>
       <img
         className="rounded-[8px] fade-in"
-        src={weirdFoodImages[currentIndex]}
-        alt=""
+        src={images[currentIndex]}
+        alt={`Image ${currentIndex + 1}`}
         key={currentIndex}
       />
     </div>
