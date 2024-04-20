@@ -124,6 +124,24 @@ const Post = ({
 
   return (
     <div className="flex flex-col mt-[8px]  relative">
+      <div className="absolute top-[10px] right-[10px]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          viewBox="0 0 25 25"
+          fill="none"
+        >
+          <path
+            d="M12.0844 0.224609L14.5879 1.52061L17.3749 1.94361L18.6379 4.46361L20.6434 6.44361L20.1844 9.22461L20.6434 12.0056L18.6379 13.9856L17.3749 16.5056L14.5879 16.9286L12.0844 18.2246L9.58089 16.9286L6.79389 16.5056L5.53089 13.9856L3.52539 12.0056L3.98439 9.22461L3.52539 6.44361L5.53089 4.46361L6.79389 1.94361L9.58089 1.52061L12.0844 0.224609Z"
+            fill="#FFC022"
+          />
+          <path
+            d="M6.08398 17.916V24.225L12.084 22.725L18.084 24.225V17.916L15.057 18.375L12.084 19.914L9.11098 18.375L6.08398 17.916Z"
+            fill="#FFC022"
+          />
+        </svg>
+      </div>
       <div className="flex flex-col py-[12px] bg-primary">
         <div className="flex flex-row gap-[8px] items-center w-full px-[16px] z-10">
           <img className="h-[24px] w-[24px] rounded-full" src={avatar} alt="" />
