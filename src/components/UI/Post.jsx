@@ -407,7 +407,7 @@ const Post = ({
               </svg>
             </div>
             <div className="flex flex-col">
-              <p className="text-black text-[12px]">ishikapareek</p>
+              <p className="text-black text-[12px]">{username}</p>
               <a
                 href="https://testnet-scan.sign.global/attestation/SPA_Rwggo7RQqdrhwiXVrurb-"
                 target="_blank"
@@ -439,7 +439,7 @@ const Post = ({
               <div className="flex flex-row items-center gap-[8px] mt-[16px]">
                 <img
                   className="border border-black rounded-[2px] rounded-4 w-[40px] h-[40px]"
-                  src="https://picsum.photos/200"
+                  src={src}
                 />
                 <div>
                   <div className="text-[14px] w-[297px]">
