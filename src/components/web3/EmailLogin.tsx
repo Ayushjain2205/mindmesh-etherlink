@@ -141,7 +141,7 @@ export default function EmailSignIn() {
           <button
             onClick={handleEmailVerification}
             disabled={isVerifyingEmail || !verificationCode}
-            className={`w-full h-[45px] my-2 flex justify-center items-center bg-primary text-white rounded-lg ${
+            className={`w-full h-[45px] my-2 flex justify-center items-center bg-primary text-black rounded-lg ${
               isVerifyingEmail ? "opacity-50 cursor-not-allowed" : "opacity-100"
             }`}
           >
@@ -175,7 +175,7 @@ export default function EmailSignIn() {
           <button
             onClick={handleCreateUsername}
             disabled={isRegisteringUsername}
-            className={`w-full px-4 py-2 bg-primary text-white rounded-[8px] ${
+            className={`w-full px-4 py-2 bg-primary text-black rounded-[8px] ${
               isRegisteringUsername
                 ? "opacity-50 cursor-not-allowed"
                 : "opacity-100"
@@ -202,7 +202,7 @@ export default function EmailSignIn() {
           onChange={(e) => setEmail(e.target.value)}
         />
         <button
-          className="w-full h-10 my-2 flex justify-center items-center bg-primary text-white rounded-lg"
+          className="w-full h-10 my-2 flex justify-center items-center bg-primary text-black rounded-lg"
           onClick={handleEmailEntered}
         >
           Sign In

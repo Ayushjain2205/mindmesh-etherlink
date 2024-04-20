@@ -71,7 +71,7 @@ export const Connected = () => {
           <button
             onClick={handleCreateUsername}
             disabled={isRegisteringUsername}
-            className={`px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700 ${
+            className={`px-4 py-2 bg-blue-500 text-black rounded-lg hover:bg-blue-700 ${
               isRegisteringUsername
                 ? "opacity-50 cursor-not-allowed"
                 : "opacity-100"
