@@ -8,7 +8,7 @@ const CreateCard = ({ name, description, imageUrl, type }) => {
         <img className="p-[26px]" src={imageUrl} alt={name} />
         <div className="flex flex-col p-[12px] absolute bottom-[18px]">
           <p className="text-secondary text-[20px] font-[500]">{name}</p>
-          <p className="text-secondary text-[12px] leading-[18px]">
+          <p className="text-secondary text-[12px] leading-[18px] w-[209px]">
             {description}
           </p>
         </div>

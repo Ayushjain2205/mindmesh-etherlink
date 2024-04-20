@@ -26,6 +26,8 @@ const Post = ({
   const [showEmojiPanel, setShowEmojiPanel] = useState(false);
   const [overlayVisible, setOverlayVisible] = useState(false);
 
+  const [attestationVisible, setAttestationVisible] = useState(false);
+
   const rewardRef = useRef(null);
 
   const [emoji, setEmoji] = useState("");
@@ -104,6 +106,11 @@ const Post = ({
     setOverlayVisible(!overlayVisible);
   };
 
+  const toggleAttestation = () => {
+    setAttestationVisible(!attestationVisible);
+    console.log("toggles");
+  };
+
   const getRemixUrl = () => {
     switch (type) {
       case "dynamic":
@@ -124,7 +131,10 @@ const Post = ({
 
   return (
     <div className="flex flex-col mt-[8px]  relative">
-      <div className="absolute top-[10px] right-[10px]">
+      <div
+        className="absolute top-[10px] right-[10px] z-50"
+        onClick={toggleAttestation}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="25"
@@ -357,6 +367,48 @@ const Post = ({
                 className="bg-primary text-black h-[40px] w-[133px] rounded-[8px]"
               >
                 Send
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      {attestationVisible && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex justify-center items-center">
+          <div className="bg-white h-[214px] w-[370px] rounded-[8px] p-[13px]">
+            <div className="flex justify-between">
+              <div className="flex items-center  gap-[8px]">
+                <p className="text-[16px] font-[600]">View Attestation</p>
+              </div>
+              <svg
+                onClick={toggleAttestation}
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="17"
+                viewBox="0 0 17 17"
+                fill="none"
+              >
+                <path
+                  d="M2.22931 2.66076C2.41684 2.47329 2.67115 2.36797 2.93631 2.36797C3.20147 2.36797 3.45578 2.47329 3.64331 2.66076L8.93631 7.95376L14.2293 2.66076C14.3216 2.56525 14.4319 2.48906 14.5539 2.43666C14.6759 2.38425 14.8071 2.35666 14.9399 2.35551C15.0727 2.35435 15.2044 2.37965 15.3273 2.42994C15.4502 2.48022 15.5618 2.55447 15.6557 2.64836C15.7496 2.74225 15.8238 2.85391 15.8741 2.9768C15.9244 3.0997 15.9497 3.23138 15.9486 3.36416C15.9474 3.49694 15.9198 3.62816 15.8674 3.75016C15.815 3.87217 15.7388 3.98251 15.6433 4.07476L10.3503 9.36776L15.6433 14.6608C15.8255 14.8494 15.9263 15.102 15.924 15.3642C15.9217 15.6264 15.8165 15.8772 15.6311 16.0626C15.4457 16.248 15.1949 16.3532 14.9327 16.3554C14.6705 16.3577 14.4179 16.2569 14.2293 16.0748L8.93631 10.7818L3.64331 16.0748C3.45471 16.2569 3.20211 16.3577 2.93991 16.3554C2.67771 16.3532 2.4269 16.248 2.24149 16.0626C2.05608 15.8772 1.95091 15.6264 1.94864 15.3642C1.94636 15.102 2.04715 14.8494 2.22931 14.6608L7.52231 9.36776L2.22931 4.07476C2.04184 3.88723 1.93652 3.63292 1.93652 3.36776C1.93652 3.10259 2.04184 2.84828 2.22931 2.66076Z"
+                  fill="#262626"
+                />
+              </svg>
+            </div>
+            <p className="text-[12px] mt-[25px] mb-[14px]">How many coins?</p>
+            <div className="flex flex-row gap-[12px] h-[40px] rounded-[6px] p-[11px] w-full border-black border-[0.5px]">
+              <img src="/icons/coin.svg" alt="" />
+              <input
+                type="number"
+                className="border border-none outline-none"
+                name=""
+                id=""
+              />
+            </div>
+            <div className="flex w-full justify-end mt-[29px]">
+              <button
+                onClick={toggleAttestation}
+                className="bg-primary text-black h-[40px] w-[133px] rounded-[8px]"
+              >
+                Done
               </button>
             </div>
           </div>
