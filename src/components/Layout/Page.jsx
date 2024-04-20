@@ -35,7 +35,7 @@ const Page = ({
           {/* Conditionally render back arrow or an empty div to maintain layout */}
           {back ? (
             <div
-              className="flex flex-col items-center justify-center w-[40px] h-[40px] rounded-full bg-[#616161] opacity-80 cursor-pointer"
+              className="flex flex-col items-center justify-center w-[40px] h-[40px] rounded-full bg-[#A4C9FF] opacity-80 cursor-pointer"
               onClick={handleBackClick}
             >
               <svg
@@ -58,13 +58,13 @@ const Page = ({
             <div className="w-[40px] h-[40px]"></div>
           )}
           <div className="flex flex-row gap-[20px]">
-            <div className="flex flex-col w-[90px] h-[40px] rounded-full bg-[#616161] opacity-80">
+            <div className="flex flex-col w-[90px] h-[40px] rounded-full bg-[#A4C9FF] opacity-80">
               <div className="flex flex-row h-full gap-[14px] items-center justify-center">
                 <img src="/icons/coin.svg" alt="" />
                 <span className="text-white text-[14px]">230</span>
               </div>
             </div>
-            <div className="flex flex-col items-center justify-center w-[40px] h-[40px] rounded-full bg-[#616161] opacity-80">
+            <div className="flex flex-col items-center justify-center w-[40px] h-[40px] rounded-full bg-[#A4C9FF] opacity-80">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="17"

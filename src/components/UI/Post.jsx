@@ -132,7 +132,7 @@ const Post = ({
   return (
     <div className="flex flex-col mt-[8px]  relative">
       <div
-        className="absolute top-[10px] right-[10px] z-50"
+        className="absolute top-[10px] right-[10px] z-30"
         onClick={toggleAttestation}
       >
         <svg
