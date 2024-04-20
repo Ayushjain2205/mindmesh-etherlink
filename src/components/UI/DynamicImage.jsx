@@ -24,7 +24,7 @@ const DynamicImage = ({ remixId }) => {
   return (
     <div>
       <img
-        className="rounded-[8px] fade-in"
+        className="rounded-[8px] fade-in h-[370px] w-[370px] object-cover"
         src={images[currentIndex]}
         alt={`Image ${currentIndex + 1}`}
         key={currentIndex}
