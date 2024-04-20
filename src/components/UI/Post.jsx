@@ -408,7 +408,12 @@ const Post = ({
             </div>
             <div className="flex flex-col">
               <p className="text-black text-[12px]">ishikapareek</p>
-              <p className="flex flex-row items-center gap-[4px] text-blue-500 hover:text-blue-600 text-[12px]">
+              <a
+                href="https://testnet-scan.sign.global/attestation/SPA_Rwggo7RQqdrhwiXVrurb-"
+                target="_blank"
+                rel="noreferrer"
+                className="flex flex-row items-center gap-[4px] text-blue-500 hover:text-blue-600 text-[12px]"
+              >
                 view attestation
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -430,7 +435,7 @@ const Post = ({
                     fill="black"
                   />
                 </svg>
-              </p>
+              </a>
               <div className="flex flex-row items-center gap-[8px] mt-[16px]">
                 <img
                   className="border border-black rounded-[2px] rounded-4 w-[40px] h-[40px]"
