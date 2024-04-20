@@ -122,6 +122,11 @@ export default function EmailSignIn() {
   if (state === "sending_email") {
     return (
       <div className="flex flex-col w-full h-[450px] items-center justify-center">
+        <img
+          className="w-[90px] h-[90px] mx-auto mb-[50px] shiver"
+          src="/images/mascot1.svg"
+          alt="Mascot"
+        />
         <p>Sending OTP email...</p>
       </div>
     );
@@ -131,6 +136,11 @@ export default function EmailSignIn() {
     return (
       <div className="flex flex-col w-full h-[450px]">
         <div className="flex flex-col justify-center items-start w-full m-auto rounded-lg bg-white p-4 text-black">
+          <img
+            className="w-[90px] h-[90px] m-auto mb-[50px] shiver"
+            src="/images/mascot1.svg"
+            alt="Mascot"
+          />
           <h3>Enter the verification code sent to your email</h3>
           <input
             className="w-full h-[45px] my-4 border border-black rounded-[8px] p-2"
@@ -162,6 +172,11 @@ export default function EmailSignIn() {
     return (
       <div className="flex justify-center items-center w-full h-[450px] py-12 bg-white">
         <div className="flex flex-col justify-center items-start w-full bg-white p-4 text-black">
+          <img
+            className="w-[90px] h-[90px] m-auto mb-[50px] shiver"
+            src="/images/mascot1.svg"
+            alt="Mascot"
+          />
           <p className="mb-4">
             Create a unique username to start using the app.
           </p>
@@ -193,6 +208,11 @@ export default function EmailSignIn() {
   return (
     <div className="flex flex-col w-full h-[450px] m-auto">
       <div className="flex flex-col justify-center items-start w-full m-auto  rounded-lg bg-white p-4 text-black">
+        <img
+          className="w-[90px] h-[90px] m-auto mb-[50px] shiver"
+          src="/images/mascot1.svg"
+          alt="Mascot"
+        />
         <h1>Enter email</h1>
         <input
           type="text"
