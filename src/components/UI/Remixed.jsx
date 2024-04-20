@@ -34,7 +34,7 @@ const Remixed = () => {
   const images = new Array(4).fill("https://picsum.photos/280");
 
   return (
-    <div className="flex flex-row overflow-scroll my-[16px] mx-[10px] items-center">
+    <div className="flex flex-row overflow-scroll hide-scrollbar my-[16px] mx-[10px] items-center">
       {images.map((src, index) => (
         <ImageWithOptionalSVG
           key={index}
