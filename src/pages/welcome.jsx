@@ -63,7 +63,7 @@ const Welcome2 = () => (
       CREATE + consume
     </p>
     <div>
-      <p className="text-[#FFC022] text-[20px] leading-[30px] mb-5 mr-5 ml-5 mt-[280px] font-bold">
+      <p className="text-primary text-[20px] leading-[30px] mb-5 mr-5 ml-5 mt-[280px] font-bold">
         (everything creative)
       </p>
     </div>
