@@ -352,8 +352,8 @@ const Post = ({
               </svg>
             </div>
             <p className="text-[12px] mt-[25px] mb-[14px]">How many coins?</p>
-            <div className="flex flex-row gap-[12px] h-[40px] rounded-[6px] p-[11px] w-full border-black border-[0.5px]">
-              <img src="/icons/coin.svg" alt="" />
+            <div className="flex flex-row gap-[12px] h-[40px] rounded-[6px] p-[7px] w-full border-black border-[0.5px]">
+              <img className="" src="/icons/coin.svg" alt="" />
               <input
                 type="number"
                 className="border border-none outline-none"
@@ -364,7 +364,7 @@ const Post = ({
             <div className="flex w-full justify-end mt-[29px]">
               <button
                 onClick={toggleOverlay}
-                className="bg-primary text-black h-[40px] w-[133px] rounded-[8px]"
+                className="bg-primary text-black h-[40px] w-full rounded-[8px]"
               >
                 Send
               </button>
