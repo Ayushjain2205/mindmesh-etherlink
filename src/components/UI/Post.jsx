@@ -374,11 +374,9 @@ const Post = ({
       )}
       {attestationVisible && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex justify-center items-center">
-          <div className="bg-white h-[214px] w-[370px] rounded-[8px] p-[13px]">
-            <div className="flex justify-between">
-              <div className="flex items-center  gap-[8px]">
-                <p className="text-[16px] font-[600]">View Attestation</p>
-              </div>
+          <div className="relative bg-white h-[217px] w-[370px] rounded-[8px] py-[13px] px-[18px]">
+            <div className="flex justify-between mb-[10px]">
+              <div className="flex h-[24px] w-[24px] rounded-full bg-[#1E09AE]"></div>
               <svg
                 onClick={toggleAttestation}
                 xmlns="http://www.w3.org/2000/svg"
@@ -393,23 +391,54 @@ const Post = ({
                 />
               </svg>
             </div>
-            <p className="text-[12px] mt-[25px] mb-[14px]">How many coins?</p>
-            <div className="flex flex-row gap-[12px] h-[40px] rounded-[6px] p-[11px] w-full border-black border-[0.5px]">
-              <img src="/icons/coin.svg" alt="" />
-              <input
-                type="number"
-                className="border border-none outline-none"
-                name=""
-                id=""
-              />
-            </div>
-            <div className="flex w-full justify-end mt-[29px]">
-              <button
-                onClick={toggleAttestation}
-                className="bg-primary text-black h-[40px] w-[133px] rounded-[8px]"
-              >
-                Done
-              </button>
+            <div className="flex flex-col">
+              <p className="text-black text-[12px]">ishikapareek</p>
+              <p className="flex flex-row items-center gap-[4px] text-blue-500 hover:text-blue-600 text-[12px]">
+                view attestation
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="13"
+                  height="13"
+                  viewBox="0 0 13 13"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.24995 2.67383C7.24995 2.57437 7.21044 2.47899 7.14011 2.40866C7.06979 2.33834 6.97441 2.29883 6.87495 2.29883H1.89795C1.59958 2.29883 1.31343 2.41735 1.10245 2.62833C0.891476 2.83931 0.772949 3.12546 0.772949 3.42383L0.772949 10.9238C0.772949 11.2222 0.891476 11.5083 1.10245 11.7193C1.31343 11.9303 1.59958 12.0488 1.89795 12.0488H9.39795C9.69632 12.0488 9.98247 11.9303 10.1934 11.7193C10.4044 11.5083 10.5229 11.2222 10.5229 10.9238V5.94683C10.5229 5.84737 10.4834 5.75199 10.4131 5.68166C10.3428 5.61134 10.2474 5.57183 10.1479 5.57183C10.0485 5.57183 9.95311 5.61134 9.88278 5.68166C9.81246 5.75199 9.77295 5.84737 9.77295 5.94683V10.9238C9.77295 11.0233 9.73344 11.1187 9.66311 11.189C9.59279 11.2593 9.49741 11.2988 9.39795 11.2988H1.89795C1.79849 11.2988 1.70311 11.2593 1.63278 11.189C1.56246 11.1187 1.52295 11.0233 1.52295 10.9238V3.42383C1.52295 3.32437 1.56246 3.22899 1.63278 3.15866C1.70311 3.08834 1.79849 3.04883 1.89795 3.04883H6.87495C6.97441 3.04883 7.06979 3.00932 7.14011 2.93899C7.21044 2.86867 7.24995 2.77328 7.24995 2.67383Z"
+                    fill="black"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12.7729 0.423828C12.7729 0.324372 12.7334 0.228989 12.6631 0.158663C12.5928 0.0883369 12.4974 0.0488281 12.3979 0.0488281L8.64793 0.0488281C8.54848 0.0488281 8.4531 0.0883369 8.38277 0.158663C8.31244 0.228989 8.27293 0.324372 8.27293 0.423828C8.27293 0.523284 8.31244 0.618667 8.38277 0.688993C8.4531 0.759319 8.54848 0.798828 8.64793 0.798828H11.4927L5.38243 6.90833C5.34757 6.94319 5.31991 6.98459 5.30104 7.03014C5.28217 7.0757 5.27246 7.12452 5.27246 7.17383C5.27246 7.22314 5.28217 7.27196 5.30104 7.31752C5.31991 7.36307 5.34757 7.40446 5.38243 7.43933C5.4173 7.47419 5.45869 7.50185 5.50425 7.52072C5.5498 7.53959 5.59863 7.5493 5.64793 7.5493C5.69724 7.5493 5.74607 7.53959 5.79162 7.52072C5.83718 7.50185 5.87857 7.47419 5.91343 7.43933L12.0229 1.32908V4.17383C12.0229 4.27328 12.0624 4.36867 12.1328 4.43899C12.2031 4.50932 12.2985 4.54883 12.3979 4.54883C12.4974 4.54883 12.5928 4.50932 12.6631 4.43899C12.7334 4.36867 12.7729 4.27328 12.7729 4.17383V0.423828Z"
+                    fill="black"
+                  />
+                </svg>
+              </p>
+              <div className="flex flex-row items-center gap-[8px] mt-[16px]">
+                <img
+                  className="border border-black rounded-[2px] rounded-4 w-[40px] h-[40px]"
+                  src="https://picsum.photos/200"
+                />
+                <div>
+                  <div className="text-[14px] w-[297px]">
+                    {title}/{" "}
+                    <span className="text-[14px] text-secondary font-[700]">
+                      {tag}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-[12px] text-black opacity-70 mt-[12px]">
+                prompt:
+              </p>
+              <p className="text-[#000] text-[12px] w-[198px]">
+                a sushi made of eyes and other body parts on it
+              </p>
+              <span className="absolute text-black text-opacity-60 text-[10px] bottom-[13px] right-[13px]">
+                18th april, 2:30PM
+              </span>
             </div>
           </div>
         </div>
