@@ -1,4 +1,5 @@
 import React from "react";
+import { postData } from "../../helpers/postdata";
 
 // Define a component for the repeating items
 const ImageWithOptionalSVG = ({ src, shouldRenderSVG }) => (
@@ -29,9 +30,11 @@ const ImageWithOptionalSVG = ({ src, shouldRenderSVG }) => (
   </>
 );
 
-const Remixed = () => {
-  // Manage the number of items through an array
-  const images = new Array(4).fill("https://picsum.photos/280");
+const Remixed = ({ remixId, currentPostId }) => {
+  // Filter postData to get images for the given remixId
+  const images = postData
+    .filter((post) => post.remixid === remixId && post.id !== currentPostId)
+    .map((post) => post.src);
 
   return (
     <div className="flex flex-row overflow-scroll hide-scrollbar my-[16px] mx-[10px] items-center">

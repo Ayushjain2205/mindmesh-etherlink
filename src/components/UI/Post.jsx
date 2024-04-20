@@ -316,7 +316,7 @@ const Post = ({
         </div>
       </div>
       {showComments && <Comments initialComments={comments} />}
-      {showRemixed && <Remixed />}
+      {showRemixed && <Remixed remixId={remixid} currentPostId={id} />}
       {overlayVisible && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex justify-center items-center">
           <div className="bg-white h-[214px] w-[370px] rounded-[8px] p-[13px]">
