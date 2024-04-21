@@ -6,16 +6,17 @@ import {
   smartWallet,
 } from "@thirdweb-dev/react";
 import { Toaster } from "react-hot-toast";
+import { MorphTestnet } from "@thirdweb-dev/chains";
 
 const smartWalletConfig = {
-  factoryAddress: "0x453B18Cc5d45962c6337A720C471B485c92dAc6F",
+  factoryAddress: "0x77e8DFa0a5A5F50bc4e62A52E8eB4F30a8162176",
   gasless: true,
 };
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThirdwebProvider
-      activeChain="binance-testnet"
+      activeChain={MorphTestnet}
       clientId="aa131b3a51f3247c974b4611ac4ff73e"
       supportedWallets={[smartWallet(embeddedWallet(), smartWalletConfig)]}
     >

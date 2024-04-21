@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Page from "../components/Layout/Page";
 import {
   useAddress,
@@ -42,6 +42,13 @@ const profile = () => {
     );
   };
 
+  // Redirect if address is null
+  useEffect(() => {
+    if (!address) {
+      router.push("/wallet");
+    }
+  }, [address, router]);
+
   return (
     <Page back="/">
       <div className="flex flex-col relative">
@@ -59,7 +66,7 @@ const profile = () => {
           <div className="flex flex-row gap-[16px] items-center">
             {address && (
               <a
-                href={`https://testnet.bscscan.com/address/${address}`}
+                href={`https://explorer-testnet.morphl2.io/address/${address}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex flex-row items-center gap-[4px] text-blue-500 hover:text-blue-600 text-[12px]"
