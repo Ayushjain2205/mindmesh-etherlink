@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import Page from "../components/Layout/Page";
 import { toast } from "react-hot-toast";
 import AudioPost from "../components/UI/AudioPost";
+import Link from "next/link";
 
 const Generate = () => {
   const [prompt, setPrompt] = useState(""); // State to hold the user's input
