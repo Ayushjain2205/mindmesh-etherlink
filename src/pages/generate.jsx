@@ -134,7 +134,7 @@ const Generate = () => {
         </div>
 
         <div className="fixed bg-white bottom-0 flex w-full justify-between p-[10px]">
-          <Link href="/">
+          <Link href="/" className=" w-full">
             <button
               className="bg-primary text-black font-[500] h-[45px] w-full rounded-[8px] mr-[10px] -ml-[10px]"
               // onClick={fetchImageFromDalle}
