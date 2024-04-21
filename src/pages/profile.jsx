@@ -51,7 +51,7 @@ const profile = () => {
             <img src="/icons/coin.svg" alt="" />
             <span className="text-black text-[16px]">Earnings</span>
           </div>
-          <span className="text-black text-[16px] font-bold">23</span>
+          <span className="text-black text-[16px] font-bold">230</span>
         </div>
         <div className="flex flex-col gap-[10px] justify-center px-[38px] z-10">
           {/* Username */}
