@@ -68,7 +68,10 @@ const remix = () => {
     <div className="flex flex-col">
       <div className="flex flex-row w-full justify-between absolute top-0 z-50">
         <div className="flex flex-col items-center justify-center w-[40px] h-[40px] cursor-pointer">
-          <Link href={`/post/${id}`}>
+          <Link
+            // href={`/post/${id}`}
+            href="/"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="21"

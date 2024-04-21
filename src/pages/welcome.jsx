@@ -44,14 +44,14 @@ const WelcomeScreen = () => {
 };
 
 const Welcome1 = () => (
-  <div className=" flex flex-col justify-center items-center bg-primary h-[665px] w-[390px]">
+  <div className="relative flex flex-col justify-center items-center bg-primary h-[665px] w-[390px]">
     <img
       className="mt-[180px]  w-[150px] h-[150px] blinking-element scaledown"
       src="/images/mascot1.svg"
     />
     <div>
-      <p className="text-[60px] mt-[40px] text-center font-extrabold text-#000000 ">
-        MIND MESH
+      <p className="absolute bottom-0 left-0 text-[36px] mt-[40px] w-full text-center font-extrabold text-#000000 ">
+        mindmesh
       </p>
     </div>
   </div>
