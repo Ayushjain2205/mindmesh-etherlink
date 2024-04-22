@@ -43,3 +43,10 @@ Our platform leverages cutting-edge technologies to provide a seamless onchain s
 - **Transactions**: Our use of account abstraction and the MM platform token onchain enables gasless and streamlined transactions, making the user experience straightforward and accessible.
 
 These integrations and our innovative approach have helped us ensure a robust, user-friendly platform that maintains data integrity and provides a transparent, engaging user experience.
+
+## Deployed Contracts links
+
+[Account Factory](https://testnet-explorer.etherlink.com/address/0x0eb9840996910Ca431Fdc3ffeE7866839A60cEB9)
+[Username Factory](https://testnet-explorer.etherlink.com/address/0xe0670FA34Bfd91D1239A52e430D985d3862e132A)
+[Post Factory](https://testnet-explorer.etherlink.com/address/0x0eb9840996910Ca431Fdc3ffeE7866839A60cEB9)
+[MM Platform token](https://thirdweb.com/etherlink-testnet/0x914C1C52fCFFD49c90C238323C8ADf64CFb6c087/tokens)
